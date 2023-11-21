@@ -1,0 +1,21 @@
+{% extends 'original.html' %}
+
+{% block content %}
+  <h2>Iniciar sesión</h2>
+
+  {{error}}
+
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="form-control" class="form-label">Rut</label>
+      <input  placeholder="11222333-4" type="text" class="form-control" id="username" name="username">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+      <input placeholder="*****" type="password" class="form-control" id="password" name="password">
+    </div>
+    <button  type="submit" class="btn btn-primary">Entrar</button>
+
+  </form>
+{% endblock %}

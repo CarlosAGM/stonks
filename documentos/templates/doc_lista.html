@@ -1,0 +1,17 @@
+{% extends 'original.html'%} {% block content %}
+<ul>
+  {% for d in documentos %}
+  <h3>Nombre:</h3>
+  <h3 class="text-primary">{{d.user.first_name}} {{d.user.last_name}}</h3>
+  <h3>Rut:</h3>
+  <h3 class="text-primary">{{d.user.username}}</h3>
+  {% endfor %} {% for d in documentos %}
+  <h4>{{d.tipo_doc}}</h4>
+  <p>{{d.link_doc}}</p>
+  <a href="{% url 'doc_detalle' d.id_doc %}">
+    <button type="submit" class="btn btn-success m-2">Editar</button>
+  </a>
+
+  {% endfor %}
+</ul>
+{% endblock %}

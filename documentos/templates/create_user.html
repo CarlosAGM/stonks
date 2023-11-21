@@ -1,0 +1,36 @@
+{% extends 'original.html'%}
+
+{% block content %} 
+{{error}}
+<form method="POST">
+        <h1>Sign Up</h1>
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="form-control" class="form-label">Rut</label>
+          <input type="text" placeholder="11222333-4" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="form-control" class="form-label">Nombre</label>
+          <input type="text" placeholder="Pedro" class="form-control" id="first_name" name="first_name" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="form-control" class="form-label">Apellidos</label>
+          <input type="text" placeholder="Fuenzalida Pérez" class="form-control" id="last_name" name="last_name" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email</label>
+          <input type="email" placeholder="perdrof@gmail.com" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+          <input type="password" placeholder="*****" class="form-control" id="password1" name="password1">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Contraseña (Confirmación)</label>
+          <input type="password" placeholder="*****" class="form-control" id="password2" name="password2">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </form>
+
+
+{% endblock %}  

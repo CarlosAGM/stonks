@@ -1,0 +1,9 @@
+{% extends 'original.html'%} {% block content %}
+
+<h1>Haz tu post!</h1>
+<form action="/crear_doc/" method="POST">
+  {% csrf_token %} {{form.as_p}}
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+{% endblock %}

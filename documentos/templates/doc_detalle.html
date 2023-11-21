@@ -1,0 +1,14 @@
+{% extends 'original.html' %} {% block content %}
+<h1>Documentos detalles</h1>
+{{error}}
+<form method="POST">
+  {% csrf_token %} {{form.as_p }}
+  <button type="submit" class="btn btn-success m-2">Actualizar</button>
+</form>
+
+<form action="{% url 'doc_delete' documentos.id_doc %}" method="POST">
+  {% csrf_token %} {{form.as_p }}
+  <button type="submit" class="btn btn-danger m-2">Borrar</button>
+</form>
+
+{% endblock %}
